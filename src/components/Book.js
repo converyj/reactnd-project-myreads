@@ -7,7 +7,7 @@ import ShowRatings from "./ShowRatings";
 /**
  * @description Displays a book with an option to move book and rating of each book 
  */
-const Book = ({ bookInfo, moveBook, addRating, onShelf }) => {
+const Book = ({ bookInfo, moveBook }) => {
 	return (
 		<li>
 			<div className='book'>
@@ -36,11 +36,7 @@ const Book = ({ bookInfo, moveBook, addRating, onShelf }) => {
 						bookInfo.authors ? bookInfo.authors[0] :
 						"No Author"}
 				</div>
-				<ShowRatings
-					book={bookInfo}
-					addRating={addRating}
-					onShelf={onShelf}
-				/>
+				<ShowRatings book={bookInfo} />
 			</div>
 		</li>
 	);
@@ -48,8 +44,7 @@ const Book = ({ bookInfo, moveBook, addRating, onShelf }) => {
 
 Book.propTypes = {
 	bookInfo: PropTypes.object.isRequired,
-	moveBook: PropTypes.func.isRequired,
-	onShelf: PropTypes.bool.isRequired
+	moveBook: PropTypes.func.isRequired
 };
 
 export default Book;

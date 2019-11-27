@@ -17,8 +17,6 @@ const Shelf = props => {
 							key={book.id}
 							bookInfo={book}
 							moveBook={props.moveBook}
-							addRating={props.addRating}
-							onShelf={true}
 						/>
 					))}
 				</ol>
@@ -30,8 +28,7 @@ const Shelf = props => {
 Shelf.propTypes = {
 	books: PropTypes.array.isRequired,
 	title: PropTypes.string.isRequired,
-	moveBook: PropTypes.func.isRequired,
-	addRating: PropTypes.func.isRequired
+	moveBook: PropTypes.func.isRequired
 };
 
 export default Shelf;
