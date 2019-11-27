@@ -43,9 +43,9 @@ export default class index extends Component {
 			/**
 			 * @description Handles moving books to different shelves and the 'none' option (which takes it off the shelf)
 			 * 
-			 * @params {string} bookId - the id of the book that is moved 
-			 * @params {array} allShelves - returns all the book ids in each shelf 
-			 * @params {string} newShelf - the shelf the book moves to 
+			 * @param {string} bookId - the id of the book that is moved 
+			 * @param {array} allShelves - returns all the book ids in each shelf 
+			 * @param {string} newShelf - the shelf the book moves to 
 			 * @public
 			 */
 			moveBook: (bookId, allShelves, newShelf) => {

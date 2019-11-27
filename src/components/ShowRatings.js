@@ -23,6 +23,7 @@ class ShowRatings extends Component {
 		let stars = [];
 		let halfDone = false;
 		value = this.props.book.averageRating;
+
 		for (let i = 1; i <= 5; i++) {
 			if (i <= value) {
 				console.log("< value");
@@ -64,6 +65,11 @@ class ShowRatings extends Component {
 						);
 					}))
 				}
+				<span>
+					({
+						book.ratingsCount ? book.ratingsCount :
+						0})
+				</span>
 			</div>
 		);
 	}

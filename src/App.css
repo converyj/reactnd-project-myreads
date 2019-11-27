@@ -181,35 +181,6 @@ body,
 	cursor: pointer;
 }
 
-.star-outer {
-	position: relative;
-	display: inline-block;
-}
-
-.star-inner {
-	position: absolute;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	width: 0;
-}
-
-.star-outer::before {
-	content: "\f005 \f005 \f005 \f005 \f005";
-	display: block;
-	font-family: "FontAwesome";
-	font-weight: 900;
-	color: #ccc;
-}
-
-.star-inner::before {
-	content: "\f005 \f005 \f005 \f005 \f005";
-	display: block;
-	font-family: "FontAwesome";
-	font-weight: 900;
-	color: #f8ce0b;
-}
-
 /* book cover */
 
 .book-cover {
