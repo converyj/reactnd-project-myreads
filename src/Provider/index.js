@@ -90,29 +90,6 @@ export default class index extends Component {
 					this.state.addBooks(newBooks); // call the addBooks to update the shelves
 					console.log(this.state.books);
 				}
-			},
-			addRating: (bookId, value) => {
-				console.log(bookId, value);
-				const newBooks = this.state.books.map(book => {
-					const foundId = bookId === book.id;
-
-					// if book id is found assign the shelf to 'none'
-					if (foundId) {
-						if (book.averageRating) {
-							book.averageRating = value;
-							console.log(book.averageRating);
-						}
-						else {
-							book.averageRating = value;
-						}
-					}
-
-					// return book that is modified
-					return book;
-				});
-				console.log(newBooks);
-				this.state.addBooks(newBooks); // call the addBooks to update the shelves
-				console.log(this.state.books);
 			}
 		};
 	}
