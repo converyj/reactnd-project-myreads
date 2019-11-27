@@ -78,9 +78,10 @@ export default class index extends Component {
 					const newBooks = this.state.books.map(book => {
 						const foundId = bookId === book.id;
 
-						// if book id is found assign the shelf to 'none'
+						// if book id is found assign the shelf to 'none' and remove own ratings
 						if (foundId) {
 							book.shelf = "none";
+							localStorage.removeItem(bookId);
 						}
 
 						// return book that is modified
