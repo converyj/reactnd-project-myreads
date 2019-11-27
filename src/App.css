@@ -115,11 +115,6 @@ body,
 	outline: none;
 }
 
-button:active {
-	border: red;
-	outline: none;
-}
-
 .search-books-results {
 	padding: 80px 10px 20px;
 }

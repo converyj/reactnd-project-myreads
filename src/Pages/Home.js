@@ -23,7 +23,8 @@ class Home extends Component {
 			books,
 			wantToRead,
 			read,
-			moveBook
+			moveBook,
+			addRating
 		} = this.props;
 		return (
 			<div className='list-books'>
@@ -38,16 +39,19 @@ class Home extends Component {
 								books={currentlyReading}
 								title='Currently Reading'
 								moveBook={moveBook}
+								addRating={addRating}
 							/>
 							<Shelf
 								books={wantToRead}
 								title='Want To Read'
 								moveBook={moveBook}
+								addRating={addRating}
 							/>
 							<Shelf
 								books={read}
 								title='Read'
 								moveBook={moveBook}
+								addRating={addRating}
 							/>
 						</React.Fragment>}
 				</div>
