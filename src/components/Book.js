@@ -35,7 +35,7 @@ const Book = ({ bookInfo, moveBook }) => {
 				<div className='book-title'>{bookInfo.title}</div>
 				<div className='book-authors'>
 					{
-						bookInfo.authors ? bookInfo.authors[0] :
+						bookInfo.authors ? bookInfo.authors.join(" & ") :
 						"No Author"}
 				</div>
 				<ShowRatings book={bookInfo} />
