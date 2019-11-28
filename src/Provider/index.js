@@ -24,7 +24,6 @@ export default class index extends Component {
 			 * @public
 			*/
 			addBooks: books => {
-				console.log(books);
 				const currentlyReading = books.filter(
 					book => book.shelf === "currentlyReading"
 				);
@@ -72,13 +71,11 @@ export default class index extends Component {
 					this.state.addBooks(newBooks); // call the addBooks method with the newBooks to update the shelves
 				}
 				else if (newShelf === "none") {
-					console.log("none", bookId);
-
 					// find the book id in the books array
 					const newBooks = this.state.books.map(book => {
 						const foundId = bookId === book.id;
 
-						// if book id is found assign the shelf to 'none' and remove own ratings
+						// if book id is found assign the shelf to 'none' and remove own ratings from Local Storage
 						if (foundId) {
 							book.shelf = "none";
 							localStorage.removeItem(bookId);
@@ -87,9 +84,7 @@ export default class index extends Component {
 						// return book that is modified
 						return book;
 					});
-					console.log(newBooks);
 					this.state.addBooks(newBooks); // call the addBooks to update the shelves
-					console.log(this.state.books);
 				}
 			}
 		};

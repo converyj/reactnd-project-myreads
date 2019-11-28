@@ -6,7 +6,7 @@ import ShowRatings from "./ShowRatings";
 import AddRating from "./AddRating";
 
 /**
- * @description Displays a book with an option to move book and ratings (both own and average) of each book 
+ * @description Displays a book with an option to move book and display ratings (both own and average) of each book 
  */
 const Book = ({ bookInfo, moveBook }) => {
 	return (

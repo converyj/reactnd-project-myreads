@@ -6,7 +6,7 @@ import Spinner from "./Spinner";
 import AddShelfToBook from "./AddShelfToBook";
 
 /**
- * @description Filters the books by calling the search function from the BooksAPI passing in the query 
+ * @description Display the search input field to filter books based on search query 
  * 
  * query - holds the query from the text input
  * filteredBooks - holds the books that are returned from the search function 
@@ -16,7 +16,11 @@ class FilterBooks extends Component {
 		query: "",
 		filteredBooks: []
 	};
-
+	/**
+	 * populate the books from search query into filteredBooks array 
+	 * 
+	 * @param {object} e - event of what was pressed (search input field)
+	 */
 	handleChange = e => {
 		const query = e.target.value;
 		this.setState({ query });

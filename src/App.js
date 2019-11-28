@@ -4,7 +4,7 @@ import "./App.css";
 import Router from "./Router";
 
 /**
- * Application Component to hold the Home and Search pages
+ * @description Application Component to hold the Home and Search pages
  */
 class BooksApp extends React.Component {
 	render() {

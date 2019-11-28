@@ -6,7 +6,7 @@ import Search from "./Pages/Search";
 import Provider, { BookContext } from "./Provider/";
 
 /**
- * Keep all the routes
+ * @description Handle all the routes
  * pass global state to Home and Search components
  */
 

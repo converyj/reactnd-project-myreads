@@ -1,10 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import Book from "./Book";
 
 /**
- * @description Add shelves to the books from the search results and call the Book Component  
+ * @description Set the books to the proper shelf call the Book Component  
  */
 const AddShelfToBook = ({ books, filteredBooks, moveBook }) => {
 	return (
@@ -41,12 +40,6 @@ const AddShelfToBook = ({ books, filteredBooks, moveBook }) => {
 			</ol>
 		</div>
 	);
-};
-
-AddShelfToBook.propTypes = {
-	books: PropTypes.array.isRequired,
-	filteredBooks: PropTypes.array.isRequired,
-	moveBook: PropTypes.func.isRequired
 };
 
 export default AddShelfToBook;

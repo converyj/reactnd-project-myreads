@@ -6,7 +6,7 @@ import { update } from "../BooksAPI";
 /**
  * @description Each book has a control that lets you select the shelf for that book. Default value for the control should always be the current shelf the book is on
  * 
- * keeps the shelf of current book in state so change in shelf is selected
+ * keeps the shelf of current book in state so component is re-rendered and the change in shelf is selected
  */
 class MoveBookOptions extends Component {
 	state = {
@@ -22,7 +22,6 @@ class MoveBookOptions extends Component {
 		const bookId = this.props.book.id;
 		const book = this.props.book;
 		const newShelf = e.target.value;
-		console.log(book, newShelf);
 		this.setState({ shelf: newShelf }); // updates the shelf so component re-renders with new shelf selected
 
 		/**

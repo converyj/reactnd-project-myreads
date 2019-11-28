@@ -14,28 +14,25 @@ const Star = ({ value, onClick }) => {
 
 	/**
 	 * @description stores the star rating of each book in array by getting the value either from Local Storage or book object 
+	 * 
+	 * @returns array with the types of stars to display
 	 */
 	const getStars = () => {
-		console.log(value);
 		let stars = [];
 		let halfDone = false;
 
 		for (let i = 1; i <= 5; i++) {
 			if (i <= value) {
-				console.log("< value");
 				stars.push("fs");
 			}
-			else if (i > value && value % 1 != 0 && !halfDone) {
-				console.log("> value andh helf");
+			else if (i > value && value % 1 !== 0 && !halfDone) {
 				stars.push("hs");
 				halfDone = true;
 			}
 			else {
-				console.log("eslse if");
 				stars.push("es");
 			}
 		}
-		console.log(stars);
 		return stars;
 	};
 	return (
