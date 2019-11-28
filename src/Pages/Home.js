@@ -11,10 +11,54 @@ import SearchBtn from "../components/SearchBtn";
  * use this.props to access global state
  */
 class Home extends Component {
+	state = {
+		shelves: []
+	};
+
+	addShelves = books => {
+		// const ns = {};
+		books.forEach((book, index) => {
+			let shelves = [];
+			const shelf = book.shelf;
+			console.log(index, shelf);
+
+			// console.log(this.state.shelves[index]["title"]);
+			if (shelf === "currentlyReading") {
+				if (
+					this.state.shelves[index]["title"] &&
+					this.state.shelves[index]["title"] !== "Currently Reading"
+				) {
+					const ns = {
+						["title"]: "Currently Reading",
+						["key"]: "currentlyReading"
+					};
+					this.setState({ shelves: [ ...this.state.shelves, ns ] });
+				}
+			}
+			if (book.shelf === "wantToRead") {
+				const ns = {
+					["title"]: "Want To Read",
+					["key"]: "wantToRead"
+				};
+			}
+			if (book.shelf === "read") {
+				const ns = {
+					["title"]: "Read",
+					["key"]: "read"
+				};
+			}
+			console.log(this.state.shelves);
+			// });
+
+			// }
+		});
+	};
+
 	// when component is loaded in DOM, fetch books from BooksAPI
 	componentDidMount() {
 		getAll().then(books => {
 			this.props.addBooks(books);
+			this.addShelves(books);
 		});
 	}
 
