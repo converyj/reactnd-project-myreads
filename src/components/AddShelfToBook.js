@@ -34,7 +34,7 @@ const AddShelfToBook = ({ books, filteredBooks, moveBook }) => {
 							/>
 						);
 					}) :
-					<div className='not-found'>
+					<div>
 						<h1>No Books Found</h1>
 					</div>}
 			</ol>
