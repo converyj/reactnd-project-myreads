@@ -11,10 +11,6 @@ import SearchBtn from "../components/SearchBtn";
  * use this.props to access global state
  */
 class Home extends Component {
-	state = {
-		shelves: []
-	};
-
 	// when component is loaded in DOM, fetch books from BooksAPI
 	componentDidMount() {
 		getAll().then(books => {
