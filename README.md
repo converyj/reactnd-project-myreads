@@ -1,8 +1,8 @@
 # To the fellow Developer:
 
-This is a simple React Web Application to manage a list of books from "Currently Reading", "Want to Read" and "Read".
+This is a simple React Web Application to manage a list of books from "Currently Reading", "Want to Read" and "Read" with the ability to rate the books.
 
-Constructed with React and React Router. with a combination of CSS styles and Bootstrap 4 configurations.
+Constructed with React and React Router. 
 
 ## Get Started!
 
@@ -16,4 +16,4 @@ Constructed with React and React Router. with a combination of CSS styles and Bo
 
 ### Step 3: Open server URL
 
-- Navigate to `http://localhost:3000` and ENJOY!!
+- Navigate to `http://localhost:3000`
