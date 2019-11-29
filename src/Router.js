@@ -33,6 +33,8 @@ const Router = () => {
 						</BookContext.Consumer>
 					)}
 				/>
+
+				<Route render={() => <h1>Not Found</h1>} />
 			</Switch>
 		</Provider>
 	);

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Book from "./Book";
 
@@ -40,6 +41,12 @@ const AddShelfToBook = ({ books, filteredBooks, moveBook }) => {
 			</ol>
 		</div>
 	);
+};
+
+AddShelfToBook.propTypes = {
+	filteredBooks: PropTypes.array,
+	books: PropTypes.array,
+	moveBook: PropTypes.func
 };
 
 export default AddShelfToBook;
