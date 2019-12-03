@@ -21,14 +21,14 @@ export default class index extends Component {
 				{
 					title: "Currently Reading",
 					key: "currentlyReading",
-					array: this.state.currentlyReading
+					array: currentlyReading
 				},
 				{
 					title: "Want To Read",
 					key: "wantToRead",
-					array: this.state.wantToRead
+					array: wantToRead
 				},
-				{ title: "Read", key: "read", array: this.state.read }
+				{ title: "Read", key: "read", array: read }
 			],
 			/** 
 			 * @description Filter the books to the right array based on their shelf name and updated state
@@ -38,8 +38,8 @@ export default class index extends Component {
 			*/
 			addBooks: books => {
 				console.log(books);
-				this.state.forEach(shelf => {
-					shelf.array = books.filter(
+				this.state.books.forEach(shelf => {
+					[ shelf.array ] = books.filter(
 						book => book.shelf === shelf.key
 					);
 				});
