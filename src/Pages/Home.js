@@ -10,6 +10,18 @@ import SearchBtn from "../components/SearchBtn";
  * Passes neccessary props to the Shelf Components
  * use this.props to access global state
  */
+const shelves = [
+	{
+		title: "Currently Reading",
+		key: "currentlyReading"
+	},
+	{
+		title: "Want To Read",
+		key: "wantToRead"
+	},
+	{ title: "Read", key: "read" }
+];
+
 class Home extends Component {
 	// when component is loaded in DOM, fetch books from BooksAPI
 	componentDidMount() {
@@ -19,19 +31,6 @@ class Home extends Component {
 	}
 
 	render() {
-		const shelves = [
-			{
-				title: "Currently Reading",
-				key: "currentlyReading",
-				array: this.props.currentlyReading
-			},
-			{
-				title: "Want To Read",
-				key: "wantToRead",
-				array: this.props.wantToRead
-			},
-			{ title: "Read", key: "read", array: this.props.read }
-		];
 		const { books, moveBook } = this.props;
 		return (
 			<div className='list-books'>
@@ -44,7 +43,7 @@ class Home extends Component {
 						shelves.map((shelf, index) => (
 							<Shelf
 								key={index}
-								books={shelf.array}
+								books={this.props[shelf.key]} // same as array of books
 								title={shelf.title}
 								moveBook={moveBook}
 							/>

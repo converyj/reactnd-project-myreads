@@ -24,7 +24,6 @@ export default class index extends Component {
 			 * @public
 			*/
 			addBooks: books => {
-				console.log(books);
 				const currentlyReading = books.filter(
 					book => book.shelf === "currentlyReading"
 				);

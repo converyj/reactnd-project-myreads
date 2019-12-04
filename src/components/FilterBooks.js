@@ -22,11 +22,18 @@ class FilterBooks extends Component {
 	 * @param {object} e - event of what was pressed (search input field)
 	 */
 	handleChange = e => {
-		const query = e.target.value;
-		this.setState({ query });
+		const query = e.target.value; //sync
+		this.setState({ query }); // async
 		if (query) {
 			// if there is a query
 			search(query).then(books => {
+				if (books.error) {
+					// if error
+					this.setState({
+						filteredBooks: []
+					});
+					return;
+				}
 				this.setState({
 					filteredBooks: books
 				});
@@ -34,7 +41,7 @@ class FilterBooks extends Component {
 			return <Spinner />;
 		}
 		else {
-			this.setState({ filteredBooks: [] });
+			this.setState({ filteredBooks: [] }); // if text field is empty
 		}
 	};
 
