@@ -5,11 +5,7 @@ import Spinner from "../components/Spinner";
 import { getAll } from "../BooksAPI";
 import SearchBtn from "../components/SearchBtn";
 
-/**
- * @description Holds all the shelves (currentlyReading, wantToRead, read) and Search Button 
- * Passes neccessary props to the Shelf Components
- * use this.props to access global state
- */
+// array of shelves to add - to only pass 1 shelf at a time
 const shelves = [
 	{
 		title: "Currently Reading",
@@ -22,6 +18,11 @@ const shelves = [
 	{ title: "Read", key: "read" }
 ];
 
+/**
+ * @description Holds all the shelves (currentlyReading, wantToRead, read) and Search Button
+ * Passes neccessary props to the Shelf Components
+ * use this.props to access global state
+ */
 class Home extends Component {
 	// when component is loaded in DOM, fetch books from BooksAPI
 	componentDidMount() {
