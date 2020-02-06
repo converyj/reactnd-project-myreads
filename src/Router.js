@@ -3,7 +3,8 @@ import { Route, Switch } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import Search from "./Pages/Search";
-import Provider, { BookContext } from "./Provider/";
+import { BookContext } from "./Provider/";
+import NoMatch from "./components/NoMatch";
 
 /**
  * @description Handle all the routes
@@ -12,29 +13,28 @@ import Provider, { BookContext } from "./Provider/";
 
 const Router = () => {
 	return (
-		<Provider>
-			<Switch>
-				<Route
-					exact
-					path='/'
-					render={() => (
-						<BookContext.Consumer>
-							{context => <Home {...context} />}
-						</BookContext.Consumer>
-					)}
-				/>
+		<Switch>
+			<Route
+				exact
+				path="/"
+				render={() => (
+					<BookContext.Consumer>
+						{(context) => <Home {...context} />}
+					</BookContext.Consumer>
+				)}
+			/>
 
-				<Route
-					exact
-					path='/search'
-					render={() => (
-						<BookContext.Consumer>
-							{context => <Search {...context} />}
-						</BookContext.Consumer>
-					)}
-				/>
-			</Switch>
-		</Provider>
+			<Route
+				exact
+				path="/search"
+				render={() => (
+					<BookContext.Consumer>
+						{(context) => <Search {...context} />}
+					</BookContext.Consumer>
+				)}
+			/>
+			<Route component={NoMatch} />
+		</Switch>
 	);
 };
 

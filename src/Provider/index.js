@@ -23,13 +23,13 @@ export default class index extends Component {
 			 * @param { array } books - JSON object that comes back from the BookAPI
 			 * @public
 			*/
-			addBooks: books => {
+			addBooks: (books) => {
 				const currentlyReading = books.filter(
-					book => book.shelf === "currentlyReading"
+					(book) => book.shelf === "currentlyReading"
 				);
-				const read = books.filter(book => book.shelf === "read");
+				const read = books.filter((book) => book.shelf === "read");
 				const wantToRead = books.filter(
-					book => book.shelf === "wantToRead"
+					(book) => book.shelf === "wantToRead"
 				);
 
 				this.setState({
@@ -54,9 +54,9 @@ export default class index extends Component {
 					newShelf === "read"
 				) {
 					// find the book id in books array from the allShelves object array
-					const newBooks = this.state.books.map(book => {
+					const newBooks = this.state.books.map((book) => {
 						const foundId = allShelves[newShelf].find(
-							bookId => bookId === book.id
+							(bookId) => bookId === book.id
 						);
 
 						// if book id is found assign it to the new shelf
@@ -72,7 +72,7 @@ export default class index extends Component {
 				}
 				else if (newShelf === "none") {
 					// find the book id in the books array
-					const newBooks = this.state.books.map(book => {
+					const newBooks = this.state.books.map((book) => {
 						const foundId = bookId === book.id;
 
 						// if book id is found assign the shelf to 'none' and remove own ratings from Local Storage
