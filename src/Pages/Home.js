@@ -10,50 +10,54 @@ import SearchBtn from "../components/SearchBtn";
  * Passes neccessary props to the Shelf Components
  * use this.props to access global state
  */
+
 class Home extends Component {
 	// when component is loaded in DOM, fetch books from BooksAPI
 	componentDidMount() {
-		getAll().then(books => {
+		getAll().then((books) => {
 			this.props.addBooks(books);
 		});
 	}
+
 	render() {
-		const {
-			currentlyReading,
-			books,
-			wantToRead,
-			read,
-			moveBook,
-			addRating
-		} = this.props;
+		const { currentlyReading, books, wantToRead, read, moveBook, addRating } = this.props;
+
+		/**
+		 * Array of shelves info to map over 
+		 */
+		const shelves = [
+			{
+				title: "Currently Reading",
+				key: currentlyReading
+			},
+			{
+				title: "Want To Read",
+				key: wantToRead
+			},
+			{ title: "Read", key: read }
+		];
+
 		return (
-			<div className='list-books'>
-				<div className='list-books-title'>
+			<div className="list-books">
+				<div className="list-books-title">
 					<h1>MyReads</h1>
 				</div>
-				<div className='list-books-content'>
-					{
-						!books || books.length === 0 ? <Spinner /> :
+				<div className="list-books-content">
+					{!books || books.length === 0 ? (
+						<Spinner />
+					) : (
 						<React.Fragment>
-							<Shelf
-								books={currentlyReading}
-								title='Currently Reading'
-								moveBook={moveBook}
-								addRating={addRating}
-							/>
-							<Shelf
-								books={wantToRead}
-								title='Want To Read'
-								moveBook={moveBook}
-								addRating={addRating}
-							/>
-							<Shelf
-								books={read}
-								title='Read'
-								moveBook={moveBook}
-								addRating={addRating}
-							/>
-						</React.Fragment>}
+							{shelves.map((shelf, index) => (
+								<Shelf
+									key={index}
+									books={shelf.key}
+									title={shelf.title}
+									moveBook={moveBook}
+									addRating={addRating}
+								/>
+							))}
+						</React.Fragment>
+					)}
 				</div>
 				<SearchBtn />
 			</div>
