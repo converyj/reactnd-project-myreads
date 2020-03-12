@@ -4,6 +4,8 @@ This is a simple React Web Application to manage a list of books from "Currently
 
 Constructed with React and React Router. 
 
+Uses RESTFUL API: https://reactnd-books-api.udacity.com 
+
 **Live Demo**: https://myreads-project.netlify.com
 
 ## Get Started!
